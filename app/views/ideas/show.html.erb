@@ -8,4 +8,15 @@
     <a href="<%= @idea.action_url %>" class="button" target="_blank">Get started!</a>
     <%= link_to "Try another idea", random_ideas_path, class: 'another' %>
   </div>
+
+  <div class="share">
+    <div class="fb-share-button" 
+		     data-href="<%= idea_url(@idea) %>"
+         data-size="large"
+		     data-layout="button_count">
+    </div>
+    <a class="twitter-share-button"
+       href="https://twitter.com/intent/tweet?text=<%= URI.encode(@idea.name) %>"
+       data-size="large"></a>
+  </div>
 </div>

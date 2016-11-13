@@ -1,22 +1,61 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Whatnow</title>
+    <title>What Now?</title>
     <%= csrf_meta_tags %>
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta property="og:type"        content="website" />
+	  <meta property="og:title"       content="What Now?" />
+	  <meta property="og:description" content="<%= @social_description or '' %>" />
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+    <!-- Facebook -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=331960093844676";
+      fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Twitter -->
+    <script>window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+
+      t._e = [];
+      t.ready = function(f) {
+      t._e.push(f);
+      };
+
+      return t;
+      }(document, "script", "twitter-wjs"));
+    </script>
+
     <h1>What now?</h1>
     <div id="content">
       <%= yield %>
     </div>
     <div id="footer">
+      <div id="subscribe">
+        <form>
+          <strong>Stay involved.</strong>
+          We have big plans. <a href="http://tinyletter.com/whatnowio">Sign up for our newsletter</a> or <a href="https://twitter.com/whatnowio">follow us on Twitter</a>.
+        </form>
+      </div>
       <div id="legal">
-        &copy; 2016 <a href="http://suckminimally.com/">Justin Streufert</a> &bull;
+        &copy; 2016 &bull;
         Not a political message; paid for by nobody &bull;
         <a href="https://github.com/monitron/whatnow/">Code (MIT License)</a> &bull; <a href="http://creativecommons.org/licenses/by/4.0/">Content License</a>
       </div>

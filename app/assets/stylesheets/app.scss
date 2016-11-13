@@ -28,11 +28,22 @@ H1 {
   right: 50px;
   text-align: center;
 
+  #subscribe {
+    font-size: 120%;
+    margin-bottom: 10px;
+    line-height: 150%;
+  
+    a {
+      color: lighten($primary-color, 60%) !important;
+    }
+  }
+
   #legal {
     color: $primary-color;
+    line-height: 150%;
     
     a {
-      color: lighten($primary-color, 10%);
+      color: lighten($primary-color, 10%) !important;
     }
   }
 }
