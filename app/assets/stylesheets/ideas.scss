@@ -1,3 +1,33 @@
-// Place all the styles related to the ideas controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "constants";
+
+.idea-finder {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+
+  .switch-concern {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .name {
+    color: white;
+    font-size: 60px;
+  }
+
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  .another {
+    font-size: 24px;
+    color: $action-color !important;
+    margin-left: 15px;
+    
+    &:hover {
+      color: lighten($action-color, 10%) !important;
+    }
+  }
+}

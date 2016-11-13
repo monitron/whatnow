@@ -1,1 +1,11 @@
-<%= @idea.name %>
+<div class="idea-finder">
+  <div class="switch-concern">
+    I'm worried about America. <strong>What can I do?</strong>
+  </div>
+  
+  <div class="name"><%= @idea.name %></div>
+  <div class="buttons">
+    <a href="<%= @idea.action_url %>" class="button" target="_blank">Get started!</a>
+    <%= link_to "Try another idea", random_ideas_path, class: 'another' %>
+  </div>
+</div>
