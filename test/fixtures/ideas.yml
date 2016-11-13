@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  concern_id: 1
+  name: MyString
+  description: MyText
+  contributor_name: MyString
+  contributor_place: MyString
+
+two:
+  concern_id: 1
+  name: MyString
+  description: MyText
+  contributor_name: MyString
+  contributor_place: MyString
