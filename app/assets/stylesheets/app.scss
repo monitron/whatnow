@@ -13,12 +13,28 @@ H1 {
   color: $secondary-color;
 }
 
-.content {
+#content {
   position: absolute;
   top: 100px;
-  left: 0;
-  right: 0;
+  left: 50px;
+  right: 50px;
   bottom: 100px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+  right: 50px;
+  text-align: center;
+
+  #legal {
+    color: $primary-color;
+    
+    a {
+      color: lighten($primary-color, 10%);
+    }
+  }
 }
 
 .button {
