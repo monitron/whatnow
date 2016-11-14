@@ -43,7 +43,13 @@
       }(document, "script", "twitter-wjs"));
     </script>
 
-    <h1>What now?</h1>
+    <div id="header">
+      <h1><%= link_to "What now?", random_ideas_path %></h1>
+      <div id="navigation">
+        <%= link_to "Submit an Idea", new_idea_path %>
+        <%= link_to "About This Site", new_idea_path %>
+      </div>
+    </div>
     <div id="content">
       <%= yield %>
     </div>

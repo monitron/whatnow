@@ -2,7 +2,7 @@
 
 .idea-finder {
   position: absolute;
-  top: 40%;
+  top: 45%;
   transform: translateY(-50%);
   width: 100%;
   text-align: center;
@@ -16,6 +16,7 @@
     .name {
       color: white;
       font-size: 60px;
+      text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
     }
 
     .description {
@@ -40,6 +41,7 @@
       
       .name {
         font-size: 30px;
+        text-shadow: none;
       }
       
       .description, .contributor {
