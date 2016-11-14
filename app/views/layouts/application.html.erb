@@ -13,7 +13,7 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
+  <body <% if @one_screen %>class="one-screen"<% end %>>
     <!-- Facebook -->
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
@@ -47,7 +47,7 @@
       <h1><%= link_to "What now?", random_ideas_path %></h1>
       <div id="navigation">
         <%= link_to "Submit an Idea", new_idea_path %>
-        <%= link_to "About This Site", new_idea_path %>
+        <%= link_to "About This Site", about_path %>
       </div>
     </div>
     <div id="content">
