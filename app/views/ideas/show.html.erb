@@ -2,11 +2,30 @@
   <div class="switch-concern">
     I'm worried about America. <strong>What can I do?</strong>
   </div>
-  
-  <div class="name"><%= @idea.name %></div>
+
+  <div class="idea">
+    <div class="name"><%= @idea.name %></div>
+    <div class="contributor">
+      <% if @idea.contributor_name? or @idea.contributor_place? %>
+        Idea contributed by
+        <% if @idea.contributor.name? %>
+          <%= @idea.contributor_name %>
+        <% else %>
+          a concerned person
+        <% end %>
+        <% if @idea.contributor_place? %>
+          from <%= @idea.contributor_place %>
+        <% end %>
+      <% else %>
+        Idea contributed anonymously
+      <% end %>
+    </div>
+    <div class="description"><%= @idea.description %></div>
+  </div>
   <div class="buttons">
-    <a href="<%= @idea.action_url %>" class="button" target="_blank">Get started!</a>
-    <%= link_to "Try another idea", random_ideas_path, class: 'another' %>
+    <%= link_to "How will this help?", "#", class: 'learn-more secondary-link' %>
+    <a href="<%= @idea.action_url %>" target="_blank" class="button" target="_blank">OK, I'll do it!</a>
+    <%= link_to "I want another idea", random_ideas_path, class: 'another secondary-link' %>
   </div>
 
   <div class="share">

@@ -11,23 +11,68 @@
     font-size: 30px;
     margin-bottom: 30px;
   }
-  
-  .name {
-    color: white;
-    font-size: 60px;
-  }
+
+  .idea {
+    .name {
+      color: white;
+      font-size: 60px;
+    }
+
+    .description {
+      display: none;
+      font-size: 22px;
+      margin: 10px 0;
+    }
+
+    .contributor {
+      display: none;
+      color: $primary-color;
+      font-style: italic;
+    }
+
+    &.with-more {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+      background: darken($primary-color, 15%);
+      padding: 10px 20px;
+      border-radius: 5px;
+      
+      .name {
+        font-size: 30px;
+      }
+      
+      .description, .contributor {
+        display: block;
+      }
+
+      .learn-more {
+        opacity: .5;
+      }
+    }
+  } 
 
   .buttons {
     margin-top: 20px;
   }
   
-  .another {
-    font-size: 24px;
+  .secondary-link {
+    display: inline-block;
+    font-size: 20px;
     color: $action-color !important;
-    margin-left: 15px;
+    margin: 0 15px;
+    width: 300px;
     
     &:hover {
       color: lighten($action-color, 10%) !important;
+    }
+
+    &.learn-more {
+      text-align: right;
+    }
+    
+    &.another {
+      text-align: left;
     }
   }
 
