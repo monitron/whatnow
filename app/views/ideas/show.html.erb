@@ -9,7 +9,7 @@
     <div class="contributor">
       <% if @idea.contributor_name? or @idea.contributor_place? %>
         Idea contributed by
-        <% if @idea.contributor.name? %>
+        <% if @idea.contributor_name? %>
           <%= @idea.contributor_name %>
         <% else %>
           a concerned person

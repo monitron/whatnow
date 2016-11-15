@@ -20,4 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      idea:
+        name: Idea Description
+        action_url: Action URL
+        description: Impact Description
+      

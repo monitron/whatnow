@@ -3,11 +3,8 @@ class IdeasController < ApplicationController
     unless session[:current_concern].blank?
       @concern = Concern.find(session[:current_concern])
     end
-    if @concern.blank?
-      @idea = Idea.order('random()').first
-    else
-      @idea = @concern.ideas.order('random()').first
-    end
+    ideas = @concern.blank? ? Idea : @concern.ideas
+    @idea = ideas.where(approved: true).order('random()').first
     redirect_to @idea
   end
 
@@ -19,5 +16,19 @@ class IdeasController < ApplicationController
     @idea = Idea.find_by_slug(params[:id])
     @social_description = @idea.name
     @one_screen = true
+  end
+
+  def new
+    @idea = Idea.new
+    @concerns = Concern.all
+  end
+
+  def create
+    @idea = Idea.new(params.require(:idea).permit(:concern_id, :name,
+      :action_url, :description, :contributor_name, :contributor_place))
+    unless @idea.save
+      @concerns = Concern.all
+      render "new"
+    end
   end
 end

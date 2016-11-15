@@ -114,12 +114,14 @@ BODY {
   background: $action-color;
   background: linear-gradient(to bottom, $action-color 0%, darken($action-color, 5%) 100%);
   color: white;
+  font-family: inherit;
   font-size: 24px;
   line-height: 50px;
   border-radius: 25px;
   padding: 0 30px;
   text-decoration: none;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  border: none;
 
   &:hover {
     background: lighten($action-color, 5%);
@@ -146,4 +148,49 @@ H2 {
   line-height: 30px;
   padding: 25px 0 0 0;
   margin: 0;
+}
+
+.form-group {
+  margin: 10px 0;
+  
+  LABEL {
+    display: block;
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+    color: white;
+  }
+
+  INPUT:not([type=submit]), TEXTAREA, SELECT {
+    font-size: 20px;
+    line-height: 30px;
+    font-family: inherit;
+    background: lighten($primary-color, 50%);
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+  }
+
+  INPUT:not([type=submit]), TEXTAREA {
+    width: 100%;
+  }
+
+  INPUT[type=submit] {
+    margin-top: 10px;
+  }
+
+  INPUT, TEXTAREA {
+    &::-webkit-input-placeholder { color: lighten($primary-color, 25%); }
+    &::-moz-input-placeholder { color: lighten($primary-color, 25%); }
+    &:-moz-placeholder { color: lighten($primary-color, 25%); }
+    &:-ms-input-placeholder { color: lighten($primary-color, 25%); }
+    &::placeholder { color: lighten($primary-color, 25%); }
+  }
+}
+
+.form-errors {
+  background: darken($primary-color, 15%);
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: $secondary-color;
 }

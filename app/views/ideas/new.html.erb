@@ -1,0 +1,53 @@
+<div class="narrative">
+  <h2>What's your plan?</h2>
+
+  <p>Help America answer the question "What Now?" by submitting your idea below. Please understand that ideas are moderated and may be edited for style. Thank you for your contribution.</p>
+
+  <% if @idea.errors.any? %>
+    <div class="form-errors">
+      <div>Sorry, we couldn't accept your idea because:</div>      
+      <ul>
+        <% @idea.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+      <div>Please correct these errors and try again.</div>
+    </div>
+  <% end %>
+  
+  <%= form_for @idea do |f| %>
+    <div class="form-group">
+      <%= f.label :concern_id, "What concern does your idea help address?" %>
+      <%= f.collection_select :concern_id, @concerns, :id, :name, prompt: "" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :name, "What is your idea?" %>
+      <%= f.text_field :name, placeholder: "Briefly describe the action we can take", maxlength: 60 %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :action_url, "Where can we take action?" %>
+      <%= f.url_field :action_url, placeholder: "Enter a URL (website address)", maxlength: 250 %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :description, "How will this action help?" %>
+      <%= f.text_area :description, placeholder: "Briefly describe the effects of this action", maxlength: 200 %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :contributor_name, "What name would you like to use? (optional)" %>
+      <%= f.text_field :contributor_name, placeholder: "e.g. Julia T.", maxlength: 40 %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :contributor_place, "Where are you from? (optional)" %>
+      <%= f.text_field :contributor_place, placeholder: "e.g. Newark, NJ", maxlength: 30 %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "Submit Idea", class: 'button' %>
+    </div>
+  <% end %>
+</div>
