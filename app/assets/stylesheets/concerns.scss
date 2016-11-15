@@ -16,7 +16,6 @@
       A {
         display: inline-block;
         color: $secondary-color;
-        text-decoration: none;
         line-height: 50px;
         font-size: 20px;
         background: darken($primary-color, 15%);
@@ -35,6 +34,18 @@
           }
         }
       }
+    }
+  }
+}
+
+@media only screen and (min-width : 320px) and (max-width : 760px) {
+  .concerns {
+    margin: 0 10px;
+
+    UL LI A {
+      line-height: 40px;
+      font-size: 18px;
+      margin: 0 15px 15px 0;
     }
   }
 }

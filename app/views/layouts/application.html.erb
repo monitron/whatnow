@@ -4,9 +4,13 @@
     <title>What Now?</title>
     <%= csrf_meta_tags %>
 
-    <meta property="og:type"        content="website" />
-	  <meta property="og:title"       content="What Now?" />
-	  <meta property="og:description" content="<%= @social_description or '' %>" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui">
+
+    <meta property="og:type"        content="website">
+	  <meta property="og:title"       content="What Now?">
+	  <meta property="og:description" content="<%= @social_description or '' %>">
 
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -45,7 +49,7 @@
 
     <div id="header">
       <h1><%= link_to "What now?", random_ideas_path %></h1>
-      <div id="navigation">
+      <div id="navigation" class="wordy">
         <%= link_to "Submit an Idea", new_idea_path %>
         <%= link_to "About This Site", about_path %>
       </div>
@@ -54,16 +58,31 @@
       <%= yield %>
     </div>
     <div id="footer">
+      <div id="navigation" class="curt">
+        <%= link_to "Submit an Idea", new_idea_path %>
+        <%= link_to "About This Site", about_path %>
+      </div>
       <div id="subscribe">
-        <form>
+        <div class="curt">
+          <strong>Stay involved:</strong>
+          <a href="http://tinyletter.com/whatnowio">Newsletter</a> &bull;
+          <a href="https://twitter.com/whatnowio">Twitter</a>
+        </div>
+        <div class="wordy">
           <strong>Stay involved.</strong>
           We have big plans. <a href="http://tinyletter.com/whatnowio">Sign up for our newsletter</a> or <a href="https://twitter.com/whatnowio">follow us on Twitter</a>.
-        </form>
+        </div>
       </div>
       <div id="legal">
-        &copy; 2016 &bull;
-        Not a political message; paid for by nobody &bull;
-        <a href="https://github.com/monitron/whatnow/">Code (MIT License)</a> &bull; <a href="http://creativecommons.org/licenses/by/4.0/">Content License</a>
+        <div class="wordy">
+          &copy; 2016 &bull;
+          Not a political message; paid for by nobody &bull;
+          <a href="https://github.com/monitron/whatnow/">Code (MIT License)</a> &bull; <a href="http://creativecommons.org/licenses/by/4.0/">Content License</a>
+        </div>
+        <div class="curt">
+          &copy; 2016 &bull;
+          <a href="https://github.com/monitron/whatnow/">Code (MIT License)</a> &bull; <a href="http://creativecommons.org/licenses/by/4.0/">Content License</a>
+        </div>
       </div>
     </div>
   </body>
