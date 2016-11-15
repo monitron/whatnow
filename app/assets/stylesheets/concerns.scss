@@ -1,3 +1,40 @@
-// Place all the styles related to the concerns controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "constants";
+
+.concerns {
+  max-width: 900px;
+  margin: 0 auto;
+
+  UL {
+    list-style-type: none;
+    margin: 20px 0 0 0;
+    padding: 0;
+    overflow: hidden;
+
+    LI {
+      float: left;
+
+      A {
+        display: inline-block;
+        color: $secondary-color;
+        text-decoration: none;
+        line-height: 50px;
+        font-size: 20px;
+        background: darken($primary-color, 15%);
+        padding: 0 20px;
+        margin: 0 20px 20px 0;
+
+        &:hover {
+          background: darken($primary_color, 5%);
+        }
+
+        &.show-all {
+          background: darken($primary-color, 20%);
+
+          &:hover {
+            background: darken($primary-color, 5%);
+          }
+        }
+      }
+    }
+  }
+}

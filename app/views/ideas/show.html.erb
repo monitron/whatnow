@@ -1,6 +1,7 @@
 <div class="idea-finder">
   <div class="switch-concern">
-    I'm worried about America. <strong>What can I do?</strong>
+    I'm worried about <%= link_to "#{@concern_name}.".html_safe, concerns_path %>
+    <strong>What can I do?</strong>
   </div>
 
   <div class="idea">

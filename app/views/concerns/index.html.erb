@@ -1,0 +1,10 @@
+<div class="concerns">
+  <h2>What are you worried about right now?</h2>
+
+  <ul>
+    <li><%= link_to "Everything!", reset_concerns_path, class: 'show-all' %></li>
+    <% for concern in @concerns %>
+      <li><%= link_to concern.name, concern %></li>
+    <% end %>
+  </ul>
+</div>

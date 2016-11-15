@@ -132,18 +132,18 @@ BODY {
   max-width: 600px;
   margin: 0 auto;
   font-size: 16px;
-  line-height: 25px;
-  
-  H2 {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 30px;
-    padding: 25px 0 0 0;
-    margin: 0;
-  }
+  line-height: 25px;  
 
   A {
     color: $secondary-color;
   }
+}
+
+H2 {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 30px;
+  padding: 25px 0 0 0;
+  margin: 0;
 }

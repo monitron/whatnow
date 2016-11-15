@@ -2,7 +2,7 @@
 
 .idea-finder {
   position: absolute;
-  top: 45%;
+  top: 50%;
   transform: translateY(-50%);
   width: 100%;
   text-align: center;
@@ -10,6 +10,18 @@
   .switch-concern {
     font-size: 30px;
     margin-bottom: 30px;
+
+    A {
+      text-decoration: none;
+      color: $secondary_color !important;
+      border-radius: 10px;
+      padding: 3px 10px;
+      background: darken($primary_color, 15%);
+
+      &:hover {
+        background: darken($primary_color, 5%);
+      }
+    }
   }
 
   .idea {
@@ -17,7 +29,7 @@
     
     .name {
       color: white;
-      font-size: 60px;
+      font-size: 55px;
       text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
     }
 
