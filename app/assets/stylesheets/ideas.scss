@@ -16,9 +16,12 @@
       border-radius: 10px;
       padding: 3px 10px;
       background: darken($primary_color, 15%);
+      background: linear-gradient(to bottom, darken($primary-color, 13%) 0%, darken($primary-color, 17%) 100%);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 
       &:hover {
         background: darken($primary_color, 5%);
+      background: linear-gradient(to bottom, darken($primary-color, 3%) 0%, darken($primary-color, 7%) 100%);
       }
     }
   }
