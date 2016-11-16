@@ -1,4 +1,4 @@
-<div class="idea-finder">
+<div class="idea-finder" data-idea-slug="<%= @idea.slug %>">
   <div class="switch-concern">
     I'm worried about <%= link_to "#{@concern_name}.".html_safe, concerns_path %>
     <strong>What can I do?</strong>
@@ -25,7 +25,7 @@
   </div>
   <div class="buttons">
     <%= link_to "How will this help?", "#", class: 'learn-more secondary-link' %>
-    <a href="<%= @idea.action_url %>" target="_blank" class="button" target="_blank">OK, I'll do it!</a>
+    <a href="<%= @idea.action_url %>" target="_blank" class="button do-it" target="_blank">OK, I'll do it!</a>
     <%= link_to "I want another idea.", random_ideas_path, class: 'another secondary-link' %>
   </div>
 
