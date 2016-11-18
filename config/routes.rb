@@ -3,6 +3,10 @@ Rails.application.routes.draw do
     collection do
       get 'random'
     end
+
+    member do
+      post 'click'
+    end
   end
   
   resources :concerns do

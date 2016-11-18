@@ -31,4 +31,11 @@ class IdeasController < ApplicationController
       render "new"
     end
   end
+
+  def click
+    @idea = Idea.find_by_slug(params[:id])
+    if @idea.nil? then not_found end
+    @idea.increment! :click_count
+    render :json => {}, status: :ok
+  end
 end

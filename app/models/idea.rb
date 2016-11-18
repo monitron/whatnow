@@ -14,6 +14,10 @@ class Idea < ApplicationRecord
     self.slug = SecureRandom.hex(10)
   end
 
+  def approve!
+    self.update! approved: true
+  end
+
   def to_param
     slug
   end
