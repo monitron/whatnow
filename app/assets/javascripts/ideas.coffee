@@ -11,7 +11,10 @@ $ ->
       label = $(ev.target).closest('.idea-finder').data('idea-slug')
       ga('send', 'event', 'Ideas', 'learn-more', label)
 
-  $('.do-it').on 'click', (ev) ->
+  $('.do-it').one 'click', (ev) ->
+    slug = $(ev.target).closest('.idea-finder').data('idea-slug')
+    # Report click locally
+    $.ajax {url: "/ideas/#{slug}/click", method: 'POST'}
+    # Report click via Google Analytics
     if window.ga?
-      label = $(ev.target).closest('.idea-finder').data('idea-slug')
-      ga('send', 'event', 'Ideas', 'do-it', label)
+      ga('send', 'event', 'Ideas', 'do-it', slug)
