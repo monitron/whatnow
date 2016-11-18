@@ -37,14 +37,16 @@
 
     .description {
       display: none;
-      font-size: 22px;
-      margin: 10px 0;
+      font-size: 18px;
+      margin-top: 10px;
+      line-height: 24px;
     }
 
     .contributor {
       display: none;
       color: $primary-color;
       font-style: italic;
+      font-size: 15px;
     }
 
     &.with-more {
@@ -52,11 +54,11 @@
       margin: 0 auto;
       text-align: left;
       background: darken($primary-color, 15%);
-      padding: 10px 20px;
+      padding: 10px 15px;
       border-radius: 5px;
       
       .name {
-        font-size: 30px;
+        font-size: 22px;
         text-shadow: none;
       }
       
