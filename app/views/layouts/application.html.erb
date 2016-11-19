@@ -63,6 +63,7 @@
     <div id="header">
       <h1><%= link_to "What now?", random_ideas_path %></h1>
       <div id="navigation" class="wordy">
+        <%= link_to "New & Popular", top_ideas_path %>
         <%= link_to "Submit an Idea", new_idea_path %>
         <%= link_to "About This Site", about_path %>
       </div>
@@ -72,8 +73,9 @@
     </div>
     <div id="footer">
       <div id="navigation" class="curt">
-        <%= link_to "Submit an Idea", new_idea_path %>
-        <%= link_to "About This Site", about_path %>
+        <%= link_to "New & Popular", top_ideas_path %>
+        <%= link_to "Submit Idea", new_idea_path %>
+        <%= link_to "About", about_path %>
       </div>
       <div id="subscribe">
         <div class="curt">

@@ -108,6 +108,41 @@
   }
 }
 
+#top-ideas {
+  max-width: 900px;
+  margin: 0 auto;
+
+  .column {
+    float: left;
+    width: 50%;
+    padding: 0 20px;
+
+    UL {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
+
+LI.idea {
+  margin-top: 15px;
+  min-height: 70px;
+  
+  A {
+    font-size: 19px;
+    color: $secondary-color;
+
+    &:hover {
+      color: lighten($secondary-color, 10%);
+    }
+  }
+
+  .concern {
+    color: lighten($primary-color, 25%);
+  }
+}
+
 @media only screen and (min-width : 320px) and (max-width : 760px) {
   .idea-finder {
     position: static;
@@ -162,5 +197,14 @@
     .share {
       height: 40px;
     }
+  }
+
+  #top-ideas .column {
+    float: none;
+    width: auto;
+  }
+
+  LI.idea {
+    min-height: 0;
   }
 }

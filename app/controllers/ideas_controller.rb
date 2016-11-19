@@ -38,4 +38,9 @@ class IdeasController < ApplicationController
     @idea.increment! :click_count
     render :json => {}, status: :ok
   end
+
+  def top
+    @popular_ideas = Idea.order('click_count desc').limit(6)
+    @new_ideas = Idea.order('created_at desc').limit(6)
+  end
 end
